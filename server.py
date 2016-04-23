@@ -3,22 +3,23 @@ import os
 import json
 from match_commands import match_commands
 from watson.call_watson import call_watson
+import json
 
 app = Flask(__name__)
 
 @app.route("/api/match_commands", methods=["POST"])
 def match_commands_api():
-    form = request.form
+    form = json.loads(request.data.decode('utf-8'))
     response = "error connecting. Lorentz is a shitty programmer"
     if 'commands' and 'text' in form:
-        commands = json.loads(form.get('commands'))
+        commands = form.get('commands')
         text = form.get('text')
         response = match_commands(text, commands)
     return json.dumps(response)
 
 @app.route('/api/format_command', methods=['POST'])
 def format_command():
-    form = request.form
+    form = json.loads(request.data.decode('utf-8'))
     response = "error connecting. Lorentz is a shitty programmer"
     if 'text' in form:
         text = form.get('text')
