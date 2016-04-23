@@ -6,3 +6,5 @@ applications:
   name: rost-grasp
   host: rost-grasp
   disk_quota: 1024M
+  services:
+  - Relationship Extraction-6u
