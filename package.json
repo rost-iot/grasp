@@ -1,0 +1,19 @@
+{
+  "name": "rost-grasp",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "async": "^1.5.2",
+    "body-parser": "^1.15.0",
+    "cfenv": "^1.0.3",
+    "express": "4.13.x",
+    "watson-developer-cloud": "^1.4.1"
+  },
+  "repository": {},
+  "engines": {
+    "node": "4.2.x"
+  }
+}
